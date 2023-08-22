@@ -5,8 +5,7 @@
 # rustup component add rust-src --toolchain nightly
 
 
-# TODO nightly
-cargo b --release
+cargo +nightly b --release 
 
 # Processing
 
