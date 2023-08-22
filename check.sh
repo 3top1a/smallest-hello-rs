@@ -5,11 +5,12 @@
 # rustup component add rust-src --toolchain nightly
 
 
-cargo +nightly b --release 
+RUSTFLAGS="-Ctarget-cpu=native -Clink-args=-nostartfiles -Clink-args=-Wl,-pie,-n,-N,--no-dynamic-linker" cargo +nightly b --release 
 
 # Processing
 
 echo
 echo "Final binary size:"
 /bin/ls -l target/release/smallest-hello | awk '{print $5}'
+file target/release/smallest-hello
 
