@@ -5,7 +5,7 @@
 # rustup component add rust-src --toolchain nightly
 
 
-RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -C relocation-model=static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none" cargo +nightly b --release 
+RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -C relocation-model=static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none " cargo +nightly b --release 
 
 # Processing
 # Remove unnecesary sectors
