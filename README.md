@@ -3,7 +3,7 @@ Smallest Hello World! possible[^1] in rust.
 Full blog post coming "soon".
 The binary is called `hello` and checked into git.
 
-[^1]: Not really, apparently someone got a [https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html](151 byte) executable.
+[^1]: Not really, apparently someone got a [151 byte](https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html) executable.
 
 Some very helpfun resources:
 - https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html
