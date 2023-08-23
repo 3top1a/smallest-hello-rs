@@ -9,7 +9,7 @@ use core::arch::asm;
 pub extern "C" fn _start(_argc: isize, _argv: *const *const u8) {
     write_to_std_out(MSG.as_ptr(), MSG.len());
 
-    exit(42);
+    exit(0);
 }
 
 fn write_to_std_out(what_pointer: *const u8, what_length: usize) {
@@ -17,7 +17,7 @@ fn write_to_std_out(what_pointer: *const u8, what_length: usize) {
         asm!(
             "syscall",
             in("rax") 1, // write syscall number
-            in("rdi") 1, // stdout file descriptor
+            in("rdi") 1, // stdout file descriptor, 2 is stderr
             in("rsi") what_pointer,
             in("rdx") what_length,
         );
