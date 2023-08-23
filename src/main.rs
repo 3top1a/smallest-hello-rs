@@ -1,22 +1,41 @@
-#![no_main]
 #![no_std]
+#![no_main]
 
-#![feature(rustc_private)]
-extern crate libc;
+const MSG: &'static str = "Hello, Rust!\n";
+
+use core::arch::asm;
 
 #[no_mangle]
-pub extern "C" fn main(_argc: isize, _argv: *const *const u8) -> isize {
-    const HELLO: &'static str = "Hello, Rust!\n\0";
+pub extern "C" fn _start(_argc: isize, _argv: *const *const u8) {
+    write_to_std_out(MSG.as_ptr(), MSG.len());
 
+    exit(42);
+}
+
+fn write_to_std_out(what_pointer: *const u8, what_length: usize) {
     unsafe {
-        libc::printf(HELLO.as_ptr() as *const _);
+        asm!(
+            "syscall",
+            in("rax") 1, // write syscall number
+            in("rdi") 1, // stdout file descriptor
+            in("rsi") what_pointer,
+            in("rdx") what_length,
+        );
     }
+}
 
-    0
+fn exit(code: i32) {
+    unsafe {
+        asm!(
+            "syscall",
+            in("rax") 60,
+            in("rdi") code,
+            options(noreturn)
+        );
+    }
 }
 
 #[panic_handler]
-fn my_panic(_info: &core::panic::PanicInfo) -> ! {
+fn panic(_: &core::panic::PanicInfo) -> ! {
     loop {}
 }
-

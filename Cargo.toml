@@ -17,4 +17,3 @@ lto = true
 codegen-units = 1
 panic = "abort"
 overflow-checks = false
-

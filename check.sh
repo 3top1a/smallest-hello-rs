@@ -5,7 +5,8 @@
 # rustup component add rust-src --toolchain nightly
 
 
-RUSTFLAGS="-Ctarget-cpu=native" cargo +nightly b --release 
+# -Clink-arg=-nostartfiles
+RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles" cargo +nightly b --release 
 
 # Processing
 
