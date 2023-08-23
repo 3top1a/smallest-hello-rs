@@ -4,7 +4,6 @@
 # rustup toolchain install nightly-x86_64-unknown-linux-gnu
 # rustup component add rust-src --toolchain nightly
 
-
 RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -C relocation-model=static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none " cargo +nightly b --release 
 
 # Processing

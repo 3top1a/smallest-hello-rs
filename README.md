@@ -1,11 +1,11 @@
 # smallest-hello-rs
-Smallest Hello World! possible[^1] in rust.
+Smallest Hello World! possible*[^1] in rust using Cargo.
 Full blog post coming "soon".
 The binary is called `hello` and checked into git.
-Using compiler and linker flags, I managed to get the size down from `276792` bytes (270KiB) to `216` bytes.
+Using compiler and linker flags, I managed to get the size down from `276792` bytes (270KiB) to `215` bytes.
 For comparison, the smallest [Windows Hello World! in Rust](https://github.com/retep998/hello-rs/tree/master) is `1536` bytes.
 
-[^1]: Not really, apparently someone got a [151 byte](https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html) executable.
+[^1]: Not really, apparently someone got a [151 byte](https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html) executable, but that's using raw rustc and not Cargo.
 
 Some very helpful resources:
 - https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html
