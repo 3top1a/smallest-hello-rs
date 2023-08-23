@@ -6,7 +6,7 @@
 
 
 # -Clink-arg=-nostartfiles
-RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie" cargo +nightly b --release 
+RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none" cargo +nightly b --release 
 
 # Processing
 
