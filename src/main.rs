@@ -30,7 +30,7 @@ fn exit(code: i32) {
             "syscall",
             in("rax") 60,
             in("rdi") code,
-            options(noreturn)
+            options(noreturn),
         );
     }
 }

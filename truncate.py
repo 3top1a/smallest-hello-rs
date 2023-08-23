@@ -1,6 +1,6 @@
 
 search_string = b"Hello, Rust!\n\x00"
-binary_file_path = "target/release/smallest-hello"
+binary_file_path = "hello"
 
 with open(binary_file_path, "rb+") as file:
     content = file.read()

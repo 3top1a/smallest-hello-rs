@@ -8,9 +8,12 @@
 RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -C relocation-model=static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none " cargo +nightly b --release 
 
 # Processing
+# Copy to root
+cp ./target/release/smallest-hello hello
+
 # Remove unnecesary sectors
-objcopy -R .shstrtab -R .comment ./target/release/smallest-hello ./target/release/smallest-hello.tmp
-mv ./target/release/smallest-hello.tmp ./target/release/smallest-hello
+objcopy -R .shstrtab -R .comment hello hello.tmp
+mv hello.tmp hello
 
 # Remove everything after Hello Rust!\n\x00, mainly the section header
 # Ideally you would use something like https://github.com/blackle/Section-Header-Stripper
@@ -18,7 +21,7 @@ python truncate.py
 
 echo
 echo "Final binary size:"
-/bin/ls -l target/release/smallest-hello | awk '{print $5}'
-file target/release/smallest-hello
+/bin/ls -l hello | awk '{print $5}'
+file hello
 
-./target/release/smallest-hello
+./hello
