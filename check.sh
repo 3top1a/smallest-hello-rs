@@ -9,6 +9,8 @@
 RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none" cargo +nightly b --release 
 
 # Processing
+objcopy -R .shstrtab -R .comment ./target/release/smallest-hello ./target/release/smallest-hello.tmp
+mv ./target/release/smallest-hello.tmp ./target/release/smallest-hello
 
 echo
 echo "Final binary size:"
