@@ -9,8 +9,12 @@
 RUSTFLAGS="-Ctarget-cpu=native -Clink-arg=-nostartfiles -Ctarget-feature=+crt-static -Clink-args=-Wl,-n,-N,--no-dynamic-linker,--no-pie,-build-id=none" cargo +nightly b --release 
 
 # Processing
+# Remove unnecesary sectors
 objcopy -R .shstrtab -R .comment ./target/release/smallest-hello ./target/release/smallest-hello.tmp
 mv ./target/release/smallest-hello.tmp ./target/release/smallest-hello
+
+# Remove everything after Hello Rust!\n\x00
+python truncate.py
 
 echo
 echo "Final binary size:"
@@ -18,4 +22,3 @@ echo "Final binary size:"
 file target/release/smallest-hello
 
 ./target/release/smallest-hello
-

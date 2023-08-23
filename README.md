@@ -5,3 +5,5 @@ Most helpful:
 - https://dev.to/szymongib/single-syscall-hello-world-in-rust-part-2-4jj4
 - https://darkcoding.net/software/a-very-small-rust-binary-indeed/
 - https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html
+- https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html
+- http://timelessname.com/elfbin/
