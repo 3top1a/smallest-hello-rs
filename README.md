@@ -15,3 +15,4 @@ Some very helpful resources:
 - https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html
 - https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html
 - http://timelessname.com/elfbin/
+- https://in4k.github.io/wiki/linux
