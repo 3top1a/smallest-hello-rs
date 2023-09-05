@@ -1,25 +1,31 @@
 #![no_std]
 #![no_main]
 
-const MSG: &'static str = "Hello, Rust!\n";
+//const MSG: &'static str = "Hello, Rust!\n";
 
 use core::arch::asm;
 
+// Prefix all file pointers with 0x4000 (e.g. 0x07 -> 0x400007)
+
 #[no_mangle]
 pub extern "C" fn _start(_argc: isize, _argv: *const *const u8) {
-    write_to_std_out(MSG.as_ptr(), MSG.len());
+    write_to_std_out(0x400009 as *const u8, 7);
+    write_to_std_out(0x400080 as *const u8, 48);
 
     exit(0);
 }
 
-fn write_to_std_out(what_pointer: *const u8, what_length: usize) {
+fn write_to_std_out(string_pointer: *const u8, string_length: usize) {
     unsafe {
         asm!(
             "syscall",
             in("rax") 1, // write syscall number
             in("rdi") 1, // stdout file descriptor, 2 is stderr
-            in("rsi") what_pointer,
-            in("rdx") what_length,
+            in("rsi") string_pointer,
+            in("rdx") string_length,
+            out("rcx") _, // clobbered by syscalls
+            out("r11") _, // clobbered by syscalls
+            lateout("rax") _,
         );
     }
 }

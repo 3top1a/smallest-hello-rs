@@ -21,6 +21,8 @@ mv hello.tmp hello
 # Or sstrip from https://github.com/BR903/ELFkickers, highly recommend that
 sstrip -z hello
 
+python3 mod.py
+
 echo
 echo "Final binary size:"
 /bin/ls -l hello | awk '{print $5}'
