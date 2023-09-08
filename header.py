@@ -23,7 +23,7 @@ with open('hello', 'rb+') as file:
         0x01, # Version
         0x00, # SystemV
         0x00, # ABI
-        b"Hello ", # e_ident, 7 bytes
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, # e_ident, 7 bytes
         0x02, 0x00, # e_type, executable
         0x3E, 0x00, # AMD x86-64
         0x01, # e_version, always one
