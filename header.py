@@ -1,5 +1,8 @@
 import struct
 
+# Hello Rust!
+# 48 65 6C 6C 6F 20 52 75 73 74 21
+
 with open('hello', 'rb+') as file:
     data = bytearray(file.read())
 
@@ -23,7 +26,7 @@ with open('hello', 'rb+') as file:
         0x01, # Version
         0x00, # SystemV
         0x00, # ABI
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, # e_ident, 7 bytes
+        0x048, 0x65, 0x6C, 0x6C, 0x6F, 0x20, 0x52, # e_ident, 7 bytes, now says "Hello W"
         0x02, 0x00, # e_type, executable
         0x3E, 0x00, # AMD x86-64
         0x01, # e_version, always one
