@@ -13,6 +13,7 @@ Some very helpful resources:
 - https://os.phil-opp.com/freestanding-rust-binary/
 - https://darkcoding.net/software/a-very-small-rust-binary-indeed/
 - https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html
+- https://www.muppetlabs.com/~breadbox/software/tiny/revisit.html
 - https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html
 - http://timelessname.com/elfbin/
 - https://in4k.github.io/wiki/linux
