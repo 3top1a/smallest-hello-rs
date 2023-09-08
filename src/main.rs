@@ -9,8 +9,8 @@ use core::arch::asm;
 
 #[no_mangle]
 pub extern "C" fn _start(_argc: isize, _argv: *const *const u8) {
-    write_to_std_out(0x400009 as *const u8, 7);
-    write_to_std_out(0x400080 as *const u8, 48);
+    write_to_std_out(0x400045 as *const u8, 3);
+    write_to_std_out(0x400058 as *const u8, 9);
 
     exit(0);
 }
