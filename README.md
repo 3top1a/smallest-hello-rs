@@ -17,3 +17,4 @@ Some very helpful resources:
 - https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html
 - http://timelessname.com/elfbin/
 - https://in4k.github.io/wiki/linux
+- https://jacobgw.com/blog/zig/low-level/2021/03/15/elf-linux.html
