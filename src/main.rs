@@ -25,7 +25,7 @@ fn write_to_std_out(string_pointer: *const u8, string_length: usize) {
             in("rdx") string_length,
             out("rcx") _, // clobbered by syscalls
             out("r11") _, // clobbered by syscalls
-            lateout("rax") _,
+            lateout("rax") _, // clobbered by syscalls too I think
         );
     }
 }
