@@ -21,10 +21,8 @@ mv hello.tmp hello
 # Or sstrip from https://github.com/BR903/ELFkickers, highly recommend that
 sstrip -z hello
 
-# Add message into header
-#python3 mod.py
-
-#python3 header.py
+# Custom header
+python3 header.py
 
 echo
 echo "Final binary size:"
