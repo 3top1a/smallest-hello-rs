@@ -1,10 +1,12 @@
 # smallest-hello-rs
-Smallest Hello World! in rust using Cargo.
+Smallest 64-bit `Hello, World!` in Rust in the World[^1].
 Full blog post coming "soon".
+Using compiler/linker flags and a simple python script, I managed to get the size down from `276792` bytes (270KiB) to a mere `149` bytes.
 The binary is called `hello` and checked into git.
-Using compiler and linker flags, I managed to get the size down from `276792` bytes (270KiB) to `149` bytes.
 For comparison, the smallest [Windows Hello World! in Rust](https://github.com/retep998/hello-rs/tree/master) is `1536` bytes.
+There's still a LOT more space in the ELF header, as most of it is ignored.
 
+[^1]: Most probably, the only other one I was able to find was [151 bytes](https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html).
 
 Some very helpful resources:
 - https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html
@@ -21,4 +23,5 @@ Some very helpful resources:
 ## Ideas
 
 - Put the whole message into one buffer, makes one less syscall
+- Mark all the editable fields with a special character
 - Go for a beer?
