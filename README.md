@@ -1,6 +1,6 @@
 # smallest-hello-rs
 Smallest 64-bit `Hello, World!` in Rust in the World[^1].
-Full blog post coming "soon".
+[Follow up blog post available here](https://e-topy.srht.site/small-rust.html).
 Using compiler/linker flags and a simple python script, I managed to get the size down from `276792` bytes (270KiB) to a mere `149` bytes.
 The binary is called `hello` and checked into git.
 For comparison, the smallest [Windows Hello World! in Rust](https://github.com/retep998/hello-rs/tree/master) is `1536` bytes.
