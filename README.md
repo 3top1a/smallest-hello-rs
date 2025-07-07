@@ -6,7 +6,7 @@ The binary is called `hello` and checked into git.
 For comparison, the smallest [Windows Hello World! in Rust](https://github.com/retep998/hello-rs/tree/master) is `1536` bytes.
 There's still a LOT more space in the ELF header, as most of it is ignored.
 
-[^1]: Most probably, the only other one I was able to find was [151 bytes](https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html).
+[^1]: Most probably, the only other one I was able to find was [151 bytes](https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html) and only prints `Hello!`.
 
 Some very helpful resources:
 - https://mainisusuallyafunction.blogspot.com/2015/01/151-byte-static-linux-binary-in-rust.html
